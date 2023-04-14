@@ -3,6 +3,7 @@ package routers
 import (
 	"myGram/controllers"
 	"myGram/middlewares"
+	"net/http"
 
 	_ "myGram/docs"
 
@@ -25,6 +26,10 @@ import (
 // @BasePath /
 func StartApp() *gin.Engine {
 	r := gin.Default()
+
+	r.GET("/", func(c *gin.Context) {
+		c.JSON(http.StatusOK, "Simple WebService called myGram. Have you seen the bugs? where? tell me if you found it! :)")
+	})
 
 	userRouter := r.Group("/users")
 	{
