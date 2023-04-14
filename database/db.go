@@ -6,8 +6,13 @@ import (
 	"myGram/models"
 	"os"
 
+	"github.com/joho/godotenv"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
+)
+
+var (
+	errLoad = godotenv.Load()
 )
 
 var (
@@ -21,6 +26,11 @@ var (
 )
 
 func StartDB() {
+	if errLoad != nil {
+		fmt.Println("Error loading .env file")
+		os.Exit(1)
+	}
+
 	config := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable", host, user, password, dbname, port)
 
 	db, err = gorm.Open(postgres.Open(config), &gorm.Config{})
