@@ -7,10 +7,13 @@ import (
 
 type User struct {
 	gorm.Model
-	Username string `gorm:"not null;uniqueIndex" json:"username" form:"username" valid:"required~Username is required!"`
-	Email    string `gorm:"not null;uniqueIndex" json:"email" form:"email" valid:"required~Email is required!,email~Invalid format email!"`
-	Password string `gorm:"not null" json:"-" form:"password" valid:"required~Password is required!,minstringlength(6)~Password minimum length must be 6 characters!"`
-	Age      int    `gorm:"not null" json:"age" form:"age" valid:"required~Age is required!,min=9~Age minimum value is 9"`
+	Username    string        `gorm:"not null;uniqueIndex" json:"username" form:"username" valid:"required~Username is required!"`
+	Email       string        `gorm:"not null;uniqueIndex" json:"email" form:"email" valid:"required~Email is required!,email~Invalid format email!"`
+	Password    string        `gorm:"not null" json:"-" form:"password" valid:"required~Password is required!,minstringlength(6)~Password minimum length must be 6 characters!"`
+	Age         int           `gorm:"not null" json:"age" form:"age" valid:"required~Age is required!,min=9~Age minimum value is 9"`
+	Photo       []Photo       `json:"photos,omitempty"`
+	Comment     []Comment     `json:"comments,omitempty"`
+	Socialmedia []Socialmedia `json:"medsos,omitempty"`
 }
 
 func (u *User) BeforeCreate(tx *gorm.DB) (err error) {
