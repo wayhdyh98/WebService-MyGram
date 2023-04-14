@@ -18,6 +18,15 @@ func HasData(u *models.User) bool {
 	return false
 }
 
+// UserRegister godoc
+// @Summary Create users from given data
+// @Description Create new user corresponding to the input data
+// @Tags users
+// @Accept json
+// @Produce json
+// @Param models.User body models.User true "create user"
+// @Success 200 {object} models.User
+// @Router /users/register [post]
 func UserRegister(c *gin.Context) {
 	db := database.GetDB()
 	contentType := c.ContentType()
@@ -58,6 +67,15 @@ func UserRegister(c *gin.Context) {
 	})
 }
 
+// UserLogin godoc
+// @Summary Get users for a given Id
+// @Description Get user profile corresponding to the input Id
+// @Tags users
+// @Accept json
+// @Produce json
+// @Param models.User body models.User true "login user"
+// @Success 200 {object} models.User
+// @Router /users/login [post]
 func UserLogin(c *gin.Context) {
 	db := database.GetDB()
 	contentType := c.ContentType()

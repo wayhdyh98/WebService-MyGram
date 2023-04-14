@@ -5,8 +5,9 @@ import (
 	"gorm.io/gorm"
 )
 
+// Comment represents the model for an comment
 type Comment struct {
-	gorm.Model
+	GormModel
 	UserId  uint
 	PhotoId uint   `gorm:"foreignKey:Photo.ID" json:"photo_id"`
 	Message string `gorm:"not null" json:"message" form:"message" valid:"required~Username is required!"`

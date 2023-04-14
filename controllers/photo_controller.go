@@ -11,6 +11,14 @@ import (
 	"github.com/golang-jwt/jwt"
 )
 
+// GetAllPhoto godoc
+// @Summary Get all photos
+// @Description Get all photos from given user Id
+// @Tags photo
+// @Accept json
+// @Produce json
+// @Success 200 {object} models.Photo
+// @Router /photos [get]
 func GetAllPhoto(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -29,6 +37,15 @@ func GetAllPhoto(c *gin.Context) {
 	c.JSON(http.StatusOK, Photo)
 }
 
+// GetPhotoById godoc
+// @Summary Get photo for a given Photo id
+// @Description Get photo corresponding to the input Photo id
+// @Tags photo
+// @Accept json
+// @Produce json
+// @Param photoId path int true "ID of the photo"
+// @Success 200 {object} models.Photo
+// @Router /photos/{photoId} [get]
 func GetPhotoById(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -57,6 +74,15 @@ func GetPhotoById(c *gin.Context) {
 	c.JSON(http.StatusOK, Photo)
 }
 
+// CreatePhoto godoc
+// @Summary Create photo from given data
+// @Description Create new photo corresponding to the input data
+// @Tags photo
+// @Accept json
+// @Produce json
+// @Param models.Photo body models.Photo true "create photo"
+// @Success 200 {object} models.Photo
+// @Router /photos [post]
 func CreatePhoto(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -90,6 +116,15 @@ func CreatePhoto(c *gin.Context) {
 	c.JSON(http.StatusCreated, Photo)
 }
 
+// UpdatePhoto godoc
+// @Summary Update photo identified by the given Photo id
+// @Description Update the photo corresponding to the input Photo id
+// @Tags photo
+// @Accept json
+// @Produce json
+// @Param photoId path int true "ID of the photo to be updated"
+// @Success 200 {object} models.Photo
+// @Router /photos/{photoId} [patch]
 func UpdatePhoto(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -120,6 +155,15 @@ func UpdatePhoto(c *gin.Context) {
 	c.JSON(http.StatusOK, Photo)
 }
 
+// DeletePhoto godoc
+// @Summary Delete photo identified by the given Photo id
+// @Description Delete the photo corresponding to the input Photo id
+// @Tags photo
+// @Accept json
+// @Produce json
+// @Param photoId path int true "ID of the photo to be deleted"
+// @Success 204 "No Content"
+// @Router /photos/{photoId} [delete]
 func DeletePhoto(c *gin.Context) {
 	db := database.GetDB()
 	Photo := models.Photo{}

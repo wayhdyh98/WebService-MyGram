@@ -11,6 +11,14 @@ import (
 	"github.com/golang-jwt/jwt"
 )
 
+// GetAllComment godoc
+// @Summary Get all comments
+// @Description Get all comments from given user Id
+// @Tags comment
+// @Accept json
+// @Produce json
+// @Success 200 {object} models.Comment
+// @Router /comments [get]
 func GetAllComment(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -29,6 +37,15 @@ func GetAllComment(c *gin.Context) {
 	c.JSON(http.StatusOK, Comment)
 }
 
+// GetCommentById godoc
+// @Summary Get comment for a given Comment id
+// @Description Get comment corresponding to the input Comment id
+// @Tags comment
+// @Accept json
+// @Produce json
+// @Param commentId path int true "ID of the comment"
+// @Success 200 {object} models.Comment
+// @Router /comments/{commentId} [get]
 func GetCommentById(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -57,6 +74,15 @@ func GetCommentById(c *gin.Context) {
 	c.JSON(http.StatusOK, Comment)
 }
 
+// CreateComment godoc
+// @Summary Create comment from given data
+// @Description Create new comment corresponding to the input data
+// @Tags comment
+// @Accept json
+// @Produce json
+// @Param models.Comment body models.Comment true "create comment"
+// @Success 200 {object} models.Comment
+// @Router /comments [post]
 func CreateComment(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -93,6 +119,15 @@ func CreateComment(c *gin.Context) {
 	c.JSON(http.StatusCreated, Comment)
 }
 
+// UpdateComment godoc
+// @Summary Update comment identified by the given Comment id
+// @Description Update the comment corresponding to the input Comment id
+// @Tags comment
+// @Accept json
+// @Produce json
+// @Param commentId path int true "ID of the comment to be updated"
+// @Success 200 {object} models.Comment
+// @Router /comments/{commentId} [patch]
 func UpdateComment(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -123,6 +158,15 @@ func UpdateComment(c *gin.Context) {
 	c.JSON(http.StatusOK, Comment)
 }
 
+// DeleteComment godoc
+// @Summary Delete comment identified by the given Comment id
+// @Description Delete the comment corresponding to the input Comment id
+// @Tags comment
+// @Accept json
+// @Produce json
+// @Param commentId path int true "ID of the comment to be deleted"
+// @Success 204 "No Content"
+// @Router /comments/{commentId} [delete]
 func DeleteComment(c *gin.Context) {
 	db := database.GetDB()
 	Comment := models.Comment{}

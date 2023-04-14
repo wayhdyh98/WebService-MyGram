@@ -5,8 +5,9 @@ import (
 	"gorm.io/gorm"
 )
 
+// Photo represents the model for an photo
 type Photo struct {
-	gorm.Model
+	GormModel
 	Title    string `gorm:"not null" json:"title" form:"title" valid:"required~Photo title is required!"`
 	Caption  string `json:"caption" form:"caption"`
 	PhotoUrl string `gorm:"not null" json:"photo_url" form:"photo_url" valid:"required~Password is required!"`

@@ -11,6 +11,14 @@ import (
 	"github.com/golang-jwt/jwt"
 )
 
+// GetAllMedia godoc
+// @Summary Get all medias
+// @Description Get all medias from given user Id
+// @Tags media
+// @Accept json
+// @Produce json
+// @Success 200 {object} models.Socialmedia
+// @Router /medias [get]
 func GetAllMedia(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -29,6 +37,15 @@ func GetAllMedia(c *gin.Context) {
 	c.JSON(http.StatusOK, Media)
 }
 
+// GetMediaById godoc
+// @Summary Get media for a given Media id
+// @Description Get media corresponding to the input Media id
+// @Tags media
+// @Accept json
+// @Produce json
+// @Param mediaId path int true "ID of the media"
+// @Success 200 {object} models.Socialmedia
+// @Router /medias/{mediaId} [get]
 func GetMediaById(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -57,6 +74,15 @@ func GetMediaById(c *gin.Context) {
 	c.JSON(http.StatusOK, Media)
 }
 
+// CreateMedia godoc
+// @Summary Create media from given data
+// @Description Create new media corresponding to the input data
+// @Tags media
+// @Accept json
+// @Produce json
+// @Param models.Socialmedia body models.Socialmedia true "create media"
+// @Success 200 {object} models.Socialmedia
+// @Router /medias [post]
 func CreateMedia(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -90,6 +116,15 @@ func CreateMedia(c *gin.Context) {
 	c.JSON(http.StatusCreated, Media)
 }
 
+// UpdateMedia godoc
+// @Summary Update media identified by the given Media id
+// @Description Update the media corresponding to the input Media id
+// @Tags media
+// @Accept json
+// @Produce json
+// @Param mediaId path int true "ID of the media to be updated"
+// @Success 200 {object} models.Socialmedia
+// @Router /medias/{mediaId} [patch]
 func UpdateMedia(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -120,6 +155,15 @@ func UpdateMedia(c *gin.Context) {
 	c.JSON(http.StatusOK, Media)
 }
 
+// DeleteMedia godoc
+// @Summary Delete media identified by the given Media id
+// @Description Delete the media corresponding to the input Media id
+// @Tags media
+// @Accept json
+// @Produce json
+// @Param mediaId path int true "ID of the media to be deleted"
+// @Success 204 "No Content"
+// @Router /medias/{mediaId} [delete]
 func DeleteMedia(c *gin.Context) {
 	db := database.GetDB()
 	Media := models.Socialmedia{}

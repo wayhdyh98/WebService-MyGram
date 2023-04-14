@@ -1,0 +1,435 @@
+basePath: /
+definitions:
+  models.Comment:
+    properties:
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      id:
+        type: integer
+      message:
+        type: string
+      photo:
+        $ref: '#/definitions/models.Photo'
+      photo_id:
+        type: integer
+      updated_at:
+        type: string
+      user:
+        $ref: '#/definitions/models.User'
+      userId:
+        type: integer
+    type: object
+  models.Photo:
+    properties:
+      caption:
+        type: string
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      id:
+        type: integer
+      photo_url:
+        type: string
+      title:
+        type: string
+      updated_at:
+        type: string
+      user:
+        $ref: '#/definitions/models.User'
+      userId:
+        type: integer
+    type: object
+  models.Socialmedia:
+    properties:
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      social_media_url:
+        type: string
+      updated_at:
+        type: string
+      user:
+        $ref: '#/definitions/models.User'
+      userId:
+        type: integer
+    type: object
+  models.User:
+    properties:
+      age:
+        type: integer
+      comments:
+        items:
+          $ref: '#/definitions/models.Comment'
+        type: array
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      email:
+        type: string
+      id:
+        type: integer
+      medsos:
+        items:
+          $ref: '#/definitions/models.Socialmedia'
+        type: array
+      photos:
+        items:
+          $ref: '#/definitions/models.Photo'
+        type: array
+      updated_at:
+        type: string
+      username:
+        type: string
+    type: object
+host: localhost:8000
+info:
+  contact:
+    email: soberkoder@swagger.io
+    name: API Support
+  description: This is a simple service for managing MyGram
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: MyGram API
+  version: "4.0"
+paths:
+  /comments:
+    get:
+      consumes:
+      - application/json
+      description: Get all comments from given user Id
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Comment'
+      summary: Get all comments
+      tags:
+      - comment
+    post:
+      consumes:
+      - application/json
+      description: Create new comment corresponding to the input data
+      parameters:
+      - description: create comment
+        in: body
+        name: models.Comment
+        required: true
+        schema:
+          $ref: '#/definitions/models.Comment'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Comment'
+      summary: Create comment from given data
+      tags:
+      - comment
+  /comments/{commentId}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete the comment corresponding to the input Comment id
+      parameters:
+      - description: ID of the comment to be deleted
+        in: path
+        name: commentId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "204":
+          description: No Content
+      summary: Delete comment identified by the given Comment id
+      tags:
+      - comment
+    get:
+      consumes:
+      - application/json
+      description: Get comment corresponding to the input Comment id
+      parameters:
+      - description: ID of the comment
+        in: path
+        name: commentId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Comment'
+      summary: Get comment for a given Comment id
+      tags:
+      - comment
+    patch:
+      consumes:
+      - application/json
+      description: Update the comment corresponding to the input Comment id
+      parameters:
+      - description: ID of the comment to be updated
+        in: path
+        name: commentId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Comment'
+      summary: Update comment identified by the given Comment id
+      tags:
+      - comment
+  /medias:
+    get:
+      consumes:
+      - application/json
+      description: Get all medias from given user Id
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Socialmedia'
+      summary: Get all medias
+      tags:
+      - media
+    post:
+      consumes:
+      - application/json
+      description: Create new media corresponding to the input data
+      parameters:
+      - description: create media
+        in: body
+        name: models.Socialmedia
+        required: true
+        schema:
+          $ref: '#/definitions/models.Socialmedia'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Socialmedia'
+      summary: Create media from given data
+      tags:
+      - media
+  /medias/{mediaId}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete the media corresponding to the input Media id
+      parameters:
+      - description: ID of the media to be deleted
+        in: path
+        name: mediaId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "204":
+          description: No Content
+      summary: Delete media identified by the given Media id
+      tags:
+      - media
+    get:
+      consumes:
+      - application/json
+      description: Get media corresponding to the input Media id
+      parameters:
+      - description: ID of the media
+        in: path
+        name: mediaId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Socialmedia'
+      summary: Get media for a given Media id
+      tags:
+      - media
+    patch:
+      consumes:
+      - application/json
+      description: Update the media corresponding to the input Media id
+      parameters:
+      - description: ID of the media to be updated
+        in: path
+        name: mediaId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Socialmedia'
+      summary: Update media identified by the given Media id
+      tags:
+      - media
+  /photos:
+    get:
+      consumes:
+      - application/json
+      description: Get all photos from given user Id
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Photo'
+      summary: Get all photos
+      tags:
+      - photo
+    post:
+      consumes:
+      - application/json
+      description: Create new photo corresponding to the input data
+      parameters:
+      - description: create photo
+        in: body
+        name: models.Photo
+        required: true
+        schema:
+          $ref: '#/definitions/models.Photo'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Photo'
+      summary: Create photo from given data
+      tags:
+      - photo
+  /photos/{photoId}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete the photo corresponding to the input Photo id
+      parameters:
+      - description: ID of the photo to be deleted
+        in: path
+        name: photoId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "204":
+          description: No Content
+      summary: Delete photo identified by the given Photo id
+      tags:
+      - photo
+    get:
+      consumes:
+      - application/json
+      description: Get photo corresponding to the input Photo id
+      parameters:
+      - description: ID of the photo
+        in: path
+        name: photoId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Photo'
+      summary: Get photo for a given Photo id
+      tags:
+      - photo
+    patch:
+      consumes:
+      - application/json
+      description: Update the photo corresponding to the input Photo id
+      parameters:
+      - description: ID of the photo to be updated
+        in: path
+        name: photoId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Photo'
+      summary: Update photo identified by the given Photo id
+      tags:
+      - photo
+  /users/login:
+    post:
+      consumes:
+      - application/json
+      description: Get user profile corresponding to the input Id
+      parameters:
+      - description: login user
+        in: body
+        name: models.User
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.User'
+      summary: Get users for a given Id
+      tags:
+      - users
+  /users/register:
+    post:
+      consumes:
+      - application/json
+      description: Create new user corresponding to the input data
+      parameters:
+      - description: create user
+        in: body
+        name: models.User
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.User'
+      summary: Create users from given data
+      tags:
+      - users
+swagger: "2.0"
