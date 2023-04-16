@@ -28,7 +28,7 @@ const docTemplate = `{
             "get": {
                 "security": [
                     {
-                        "AuthToken": []
+                        "Bearer": []
                     }
                 ],
                 "description": "Get all comments from given user Id",
@@ -54,7 +54,7 @@ const docTemplate = `{
             "post": {
                 "security": [
                     {
-                        "AuthToken": []
+                        "Bearer": []
                     }
                 ],
                 "description": "Create new comment corresponding to the input data",
@@ -93,7 +93,7 @@ const docTemplate = `{
             "get": {
                 "security": [
                     {
-                        "AuthToken": []
+                        "Bearer": []
                     }
                 ],
                 "description": "Get comment corresponding to the input Comment id",
@@ -128,7 +128,7 @@ const docTemplate = `{
             "delete": {
                 "security": [
                     {
-                        "AuthToken": []
+                        "Bearer": []
                     }
                 ],
                 "description": "Delete the comment corresponding to the input Comment id",
@@ -160,7 +160,7 @@ const docTemplate = `{
             "patch": {
                 "security": [
                     {
-                        "AuthToken": []
+                        "Bearer": []
                     }
                 ],
                 "description": "Update the comment corresponding to the input Comment id",
@@ -197,7 +197,7 @@ const docTemplate = `{
             "get": {
                 "security": [
                     {
-                        "AuthToken": []
+                        "Bearer": []
                     }
                 ],
                 "description": "Get all medias from given user Id",
@@ -223,7 +223,7 @@ const docTemplate = `{
             "post": {
                 "security": [
                     {
-                        "AuthToken": []
+                        "Bearer": []
                     }
                 ],
                 "description": "Create new media corresponding to the input data",
@@ -262,7 +262,7 @@ const docTemplate = `{
             "get": {
                 "security": [
                     {
-                        "AuthToken": []
+                        "Bearer": []
                     }
                 ],
                 "description": "Get media corresponding to the input Media id",
@@ -297,7 +297,7 @@ const docTemplate = `{
             "delete": {
                 "security": [
                     {
-                        "AuthToken": []
+                        "Bearer": []
                     }
                 ],
                 "description": "Delete the media corresponding to the input Media id",
@@ -329,7 +329,7 @@ const docTemplate = `{
             "patch": {
                 "security": [
                     {
-                        "AuthToken": []
+                        "Bearer": []
                     }
                 ],
                 "description": "Update the media corresponding to the input Media id",
@@ -366,7 +366,7 @@ const docTemplate = `{
             "get": {
                 "security": [
                     {
-                        "AuthToken": []
+                        "Bearer": []
                     }
                 ],
                 "description": "Get all photos from given user Id",
@@ -392,7 +392,7 @@ const docTemplate = `{
             "post": {
                 "security": [
                     {
-                        "AuthToken": []
+                        "Bearer": []
                     }
                 ],
                 "description": "Create new photo corresponding to the input data",
@@ -431,7 +431,7 @@ const docTemplate = `{
             "get": {
                 "security": [
                     {
-                        "AuthToken": []
+                        "Bearer": []
                     }
                 ],
                 "description": "Get photo corresponding to the input Photo id",
@@ -466,7 +466,7 @@ const docTemplate = `{
             "delete": {
                 "security": [
                     {
-                        "AuthToken": []
+                        "Bearer": []
                     }
                 ],
                 "description": "Delete the photo corresponding to the input Photo id",
@@ -498,7 +498,7 @@ const docTemplate = `{
             "patch": {
                 "security": [
                     {
-                        "AuthToken": []
+                        "Bearer": []
                     }
                 ],
                 "description": "Update the photo corresponding to the input Photo id",

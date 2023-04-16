@@ -118,7 +118,7 @@ paths:
           schema:
             $ref: '#/definitions/models.Comment'
       security:
-      - AuthToken: []
+      - Bearer: []
       summary: Get all comments
       tags:
       - comment
@@ -141,7 +141,7 @@ paths:
           schema:
             $ref: '#/definitions/models.Comment'
       security:
-      - AuthToken: []
+      - Bearer: []
       summary: Create comment from given data
       tags:
       - comment
@@ -162,7 +162,7 @@ paths:
         "204":
           description: No Content
       security:
-      - AuthToken: []
+      - Bearer: []
       summary: Delete comment identified by the given Comment id
       tags:
       - comment
@@ -184,7 +184,7 @@ paths:
           schema:
             $ref: '#/definitions/models.Comment'
       security:
-      - AuthToken: []
+      - Bearer: []
       summary: Get comment for a given Comment id
       tags:
       - comment
@@ -206,7 +206,7 @@ paths:
           schema:
             $ref: '#/definitions/models.Comment'
       security:
-      - AuthToken: []
+      - Bearer: []
       summary: Update comment identified by the given Comment id
       tags:
       - comment
@@ -223,7 +223,7 @@ paths:
           schema:
             $ref: '#/definitions/models.Socialmedia'
       security:
-      - AuthToken: []
+      - Bearer: []
       summary: Get all medias
       tags:
       - media
@@ -246,7 +246,7 @@ paths:
           schema:
             $ref: '#/definitions/models.Socialmedia'
       security:
-      - AuthToken: []
+      - Bearer: []
       summary: Create media from given data
       tags:
       - media
@@ -267,7 +267,7 @@ paths:
         "204":
           description: No Content
       security:
-      - AuthToken: []
+      - Bearer: []
       summary: Delete media identified by the given Media id
       tags:
       - media
@@ -289,7 +289,7 @@ paths:
           schema:
             $ref: '#/definitions/models.Socialmedia'
       security:
-      - AuthToken: []
+      - Bearer: []
       summary: Get media for a given Media id
       tags:
       - media
@@ -311,7 +311,7 @@ paths:
           schema:
             $ref: '#/definitions/models.Socialmedia'
       security:
-      - AuthToken: []
+      - Bearer: []
       summary: Update media identified by the given Media id
       tags:
       - media
@@ -328,7 +328,7 @@ paths:
           schema:
             $ref: '#/definitions/models.Photo'
       security:
-      - AuthToken: []
+      - Bearer: []
       summary: Get all photos
       tags:
       - photo
@@ -351,7 +351,7 @@ paths:
           schema:
             $ref: '#/definitions/models.Photo'
       security:
-      - AuthToken: []
+      - Bearer: []
       summary: Create photo from given data
       tags:
       - photo
@@ -372,7 +372,7 @@ paths:
         "204":
           description: No Content
       security:
-      - AuthToken: []
+      - Bearer: []
       summary: Delete photo identified by the given Photo id
       tags:
       - photo
@@ -394,7 +394,7 @@ paths:
           schema:
             $ref: '#/definitions/models.Photo'
       security:
-      - AuthToken: []
+      - Bearer: []
       summary: Get photo for a given Photo id
       tags:
       - photo
@@ -416,7 +416,7 @@ paths:
           schema:
             $ref: '#/definitions/models.Photo'
       security:
-      - AuthToken: []
+      - Bearer: []
       summary: Update photo identified by the given Photo id
       tags:
       - photo
