@@ -72,7 +72,7 @@ func StartApp() *gin.Engine {
 		commentRouter.DELETE(("/:commentId"), middlewares.CommentAuthorization(), controllers.DeleteComment)
 	}
 
-	mediaRouter := r.Group("/media")
+	mediaRouter := r.Group("/medias")
 	{
 		mediaRouter.Use(middlewares.Authentication())
 		// Read All
