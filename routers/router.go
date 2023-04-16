@@ -22,7 +22,7 @@ import (
 // @contact.email soberkoder@swagger.io
 // @License.name Apache 2.0
 // @License.url http://www.apache.org/licenses/LICENSE-2.0.html
-// @host http://webservice-mygram-production.up.railway.app
+// @host https://webservice-mygram-production.up.railway.app
 // @BasePath /
 func StartApp() *gin.Engine {
 	r := gin.Default()
@@ -33,6 +33,7 @@ func StartApp() *gin.Engine {
 
 	userRouter := r.Group("/users")
 	{
+		userRouter.Use(middlewares.corsMiddleware())
 		// Create
 		userRouter.POST("/register", controllers.UserRegister)
 		// Read

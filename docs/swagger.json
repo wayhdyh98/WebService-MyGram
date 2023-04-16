@@ -14,7 +14,7 @@
         },
         "version": "4.0"
     },
-    "host": "http://webservice-mygram-production.up.railway.app",
+    "host": "https://webservice-mygram-production.up.railway.app",
     "basePath": "/",
     "paths": {
         "/comments": {
