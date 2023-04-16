@@ -22,7 +22,7 @@ import (
 // @contact.email soberkoder@swagger.io
 // @License.name Apache 2.0
 // @License.url http://www.apache.org/licenses/LICENSE-2.0.html
-// @host localhost:8000
+// @host https://webservice-mygram-production.up.railway.app/swagger/index.html#
 // @BasePath /
 func StartApp() *gin.Engine {
 	r := gin.Default()
