@@ -64,6 +64,7 @@ func UserRegister(c *gin.Context) {
 		"id":       User.ID,
 		"email":    User.Email,
 		"username": User.Username,
+		"age": User.Age,
 	})
 }
 
