@@ -17,9 +17,9 @@ import (
 // @Tags photo
 // @Accept json
 // @Produce json
-// @Security Bearer
 // @Success 200 {object} models.Photo
 // @Router /photos [get]
+// @Security Bearer
 func GetAllPhoto(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -44,10 +44,10 @@ func GetAllPhoto(c *gin.Context) {
 // @Tags photo
 // @Accept json
 // @Produce json
-// @Security Bearer
 // @Param photoId path int true "ID of the photo"
 // @Success 200 {object} models.Photo
 // @Router /photos/{photoId} [get]
+// @Security Bearer
 func GetPhotoById(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -88,10 +88,10 @@ func GetPhotoById(c *gin.Context) {
 // @Tags photo
 // @Accept json
 // @Produce json
-// @Security Bearer
 // @Param models.Photo body models.Photo true "create photo"
 // @Success 200 {object} models.Photo
 // @Router /photos [post]
+// @Security Bearer
 func CreatePhoto(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -131,10 +131,10 @@ func CreatePhoto(c *gin.Context) {
 // @Tags photo
 // @Accept json
 // @Produce json
-// @Security Bearer
 // @Param photoId path int true "ID of the photo to be updated"
 // @Success 200 {object} models.Photo
 // @Router /photos/{photoId} [patch]
+// @Security Bearer
 func UpdatePhoto(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -171,10 +171,10 @@ func UpdatePhoto(c *gin.Context) {
 // @Tags photo
 // @Accept json
 // @Produce json
-// @Security Bearer
 // @Param photoId path int true "ID of the photo to be deleted"
 // @Success 204 "No Content"
 // @Router /photos/{photoId} [delete]
+// @Security Bearer
 func DeletePhoto(c *gin.Context) {
 	db := database.GetDB()
 	Photo := models.Photo{}

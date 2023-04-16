@@ -17,9 +17,9 @@ import (
 // @Tags comment
 // @Accept json
 // @Produce json
-// @Security Bearer
 // @Success 200 {object} models.Comment
 // @Router /comments [get]
+// @Security Bearer
 func GetAllComment(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -44,10 +44,10 @@ func GetAllComment(c *gin.Context) {
 // @Tags comment
 // @Accept json
 // @Produce json
-// @Security Bearer
 // @Param commentId path int true "ID of the comment"
 // @Success 200 {object} models.Comment
 // @Router /comments/{commentId} [get]
+// @Security Bearer
 func GetCommentById(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -82,10 +82,10 @@ func GetCommentById(c *gin.Context) {
 // @Tags comment
 // @Accept json
 // @Produce json
-// @Security Bearer
 // @Param models.Comment body models.Comment true "create comment"
 // @Success 200 {object} models.Comment
 // @Router /comments [post]
+// @Security Bearer
 func CreateComment(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -141,10 +141,10 @@ func CreateComment(c *gin.Context) {
 // @Tags comment
 // @Accept json
 // @Produce json
-// @Security Bearer
 // @Param commentId path int true "ID of the comment to be updated"
 // @Success 200 {object} models.Comment
 // @Router /comments/{commentId} [patch]
+// @Security Bearer
 func UpdateComment(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -181,10 +181,10 @@ func UpdateComment(c *gin.Context) {
 // @Tags comment
 // @Accept json
 // @Produce json
-// @Security Bearer
 // @Param commentId path int true "ID of the comment to be deleted"
 // @Success 204 "No Content"
 // @Router /comments/{commentId} [delete]
+// @Security Bearer
 func DeleteComment(c *gin.Context) {
 	db := database.GetDB()
 	Comment := models.Comment{}
