@@ -88,10 +88,11 @@ func CreateComment(c *gin.Context) {
 	userData := c.MustGet("userData").(jwt.MapClaims)
 	contentType := c.ContentType()
 	userId := uint(userData["id"].(float64))
+	age := int(userData["age"].(float64))
 
 	Comment := models.Comment{}
 	Photo := models.Photo{}
-	User := models.User{}
+	User, TempUser := models.User{}, models.User{}
 
 	if contentType == appJSON {
 		c.ShouldBindJSON(&Comment)
@@ -100,11 +101,23 @@ func CreateComment(c *gin.Context) {
 	}
 
 	db.First(&User, userId)
+	
 	db.First(&Photo, Comment.PhotoId)
+	db.First(&TempUser, Photo.UserId)
 
 	Comment.UserId = userId
 	Comment.User = &User
 	Comment.Photo = &Photo
+
+	if Photo.UserId != userId {
+		if TempUser.Age >= 18 && age < 18 {
+			c.JSON(http.StatusUnauthorized, gin.H{
+				"error":   "Unauthorized",
+				"message": "Can't comment on age-restricted photos!",
+			})
+			return
+		}
+	}
 
 	err := db.Debug().Create(&Comment).Error
 

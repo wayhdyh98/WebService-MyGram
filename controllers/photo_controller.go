@@ -50,9 +50,11 @@ func GetPhotoById(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
 	userId := uint(userData["id"].(float64))
+	age := int(userData["age"].(float64))
 
 	photoId, _ := strconv.Atoi(c.Param("photoId"))
 	Photo := models.Photo{}
+	User := models.User{}
 
 	err := db.Find(&Photo, photoId).Error
 	if err != nil {
@@ -63,12 +65,16 @@ func GetPhotoById(c *gin.Context) {
 		return
 	}
 
+	db.First(&User, Photo.UserId)
+
 	if Photo.UserId != userId {
-		c.JSON(http.StatusUnauthorized, gin.H{
-			"error":   "Unauthorized",
-			"message": "Can't access others photo!",
-		})
-		return
+		if User.Age >= 18 && age < 18 {
+			c.JSON(http.StatusUnauthorized, gin.H{
+				"error":   "Unauthorized",
+				"message": "This photo can only be seen by 18+ years old!",
+			})
+			return
+		}
 	}
 
 	c.JSON(http.StatusOK, Photo)
@@ -169,8 +175,19 @@ func DeletePhoto(c *gin.Context) {
 	Photo := models.Photo{}
 
 	photoId, _ := strconv.Atoi(c.Param("photoId"))
+	Comment := models.Comment{}
 
-	err := db.Where("id=?", photoId).Delete(&Photo).Error
+	err := db.Where("photoId=?", photoId).Delete(&Comment).Error
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error":   "Bad Request",
+			"message": err.Error(),
+		})
+		return
+	}
+
+	err = db.Where("id=?", photoId).Delete(&Photo).Error
 
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{

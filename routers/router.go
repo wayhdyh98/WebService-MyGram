@@ -31,9 +31,10 @@ func StartApp() *gin.Engine {
 		c.JSON(http.StatusOK, "Simple WebService called myGram. Have you seen the bugs? where? tell me if you found it! :)")
 	})
 
+	r.Use(middlewares.CorsMiddleware())
+
 	userRouter := r.Group("/users")
 	{
-		userRouter.Use(middlewares.CorsMiddleware())
 		// Create
 		userRouter.POST("/register", controllers.UserRegister)
 		// Read

@@ -10,10 +10,11 @@ import (
 
 var secretKey = "dumbwaystodie"
 
-func GenerateToken(id uint, email string) string {
+func GenerateToken(id uint, email string, age int) string {
 	claims := jwt.MapClaims{
 		"id":    id,
 		"email": email,
+		"age": age,
 	}
 
 	parseToken := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
