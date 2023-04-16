@@ -92,7 +92,7 @@ definitions:
       username:
         type: string
     type: object
-host: https://webservice-mygram-production.up.railway.app
+host: webservice-mygram-production.up.railway.app
 info:
   contact:
     email: soberkoder@swagger.io
