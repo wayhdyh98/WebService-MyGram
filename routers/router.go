@@ -33,7 +33,7 @@ func StartApp() *gin.Engine {
 
 	userRouter := r.Group("/users")
 	{
-		userRouter.Use(middlewares.corsMiddleware())
+		userRouter.Use(middlewares.CorsMiddleware())
 		// Create
 		userRouter.POST("/register", controllers.UserRegister)
 		// Read
