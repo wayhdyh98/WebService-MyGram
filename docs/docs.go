@@ -625,7 +625,7 @@ const docTemplate = `{
                 "age": {
                     "type": "integer"
                 },
-                "comments": {
+                "comment": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/models.Comment"
@@ -643,16 +643,19 @@ const docTemplate = `{
                 "id": {
                     "type": "integer"
                 },
-                "medsos": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/models.Socialmedia"
-                    }
+                "password": {
+                    "type": "string"
                 },
-                "photos": {
+                "photo": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/models.Photo"
+                    }
+                },
+                "socialmedia": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.Socialmedia"
                     }
                 },
                 "updated_at": {
@@ -669,7 +672,7 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "4.0",
-	Host:             "localhost:8000",
+	Host:             "https://webservice-mygram-production.up.railway.app/swagger/index.html#",
 	BasePath:         "/",
 	Schemes:          []string{},
 	Title:            "MyGram API",

@@ -14,7 +14,7 @@
         },
         "version": "4.0"
     },
-    "host": "localhost:8000",
+    "host": "https://webservice-mygram-production.up.railway.app/swagger/index.html#",
     "basePath": "/",
     "paths": {
         "/comments": {
@@ -618,7 +618,7 @@
                 "age": {
                     "type": "integer"
                 },
-                "comments": {
+                "comment": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/models.Comment"
@@ -636,16 +636,19 @@
                 "id": {
                     "type": "integer"
                 },
-                "medsos": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/models.Socialmedia"
-                    }
+                "password": {
+                    "type": "string"
                 },
-                "photos": {
+                "photo": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/models.Photo"
+                    }
+                },
+                "socialmedia": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.Socialmedia"
                     }
                 },
                 "updated_at": {

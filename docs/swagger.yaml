@@ -65,7 +65,7 @@ definitions:
     properties:
       age:
         type: integer
-      comments:
+      comment:
         items:
           $ref: '#/definitions/models.Comment'
         type: array
@@ -77,20 +77,22 @@ definitions:
         type: string
       id:
         type: integer
-      medsos:
-        items:
-          $ref: '#/definitions/models.Socialmedia'
-        type: array
-      photos:
+      password:
+        type: string
+      photo:
         items:
           $ref: '#/definitions/models.Photo'
+        type: array
+      socialmedia:
+        items:
+          $ref: '#/definitions/models.Socialmedia'
         type: array
       updated_at:
         type: string
       username:
         type: string
     type: object
-host: localhost:8000
+host: https://webservice-mygram-production.up.railway.app/swagger/index.html#
 info:
   contact:
     email: soberkoder@swagger.io
