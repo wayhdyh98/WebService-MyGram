@@ -26,6 +26,11 @@ const docTemplate = `{
     "paths": {
         "/comments": {
             "get": {
+                "security": [
+                    {
+                        "AuthToken": []
+                    }
+                ],
                 "description": "Get all comments from given user Id",
                 "consumes": [
                     "application/json"
@@ -47,6 +52,11 @@ const docTemplate = `{
                 }
             },
             "post": {
+                "security": [
+                    {
+                        "AuthToken": []
+                    }
+                ],
                 "description": "Create new comment corresponding to the input data",
                 "consumes": [
                     "application/json"
@@ -81,6 +91,11 @@ const docTemplate = `{
         },
         "/comments/{commentId}": {
             "get": {
+                "security": [
+                    {
+                        "AuthToken": []
+                    }
+                ],
                 "description": "Get comment corresponding to the input Comment id",
                 "consumes": [
                     "application/json"
@@ -111,6 +126,11 @@ const docTemplate = `{
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "AuthToken": []
+                    }
+                ],
                 "description": "Delete the comment corresponding to the input Comment id",
                 "consumes": [
                     "application/json"
@@ -138,6 +158,11 @@ const docTemplate = `{
                 }
             },
             "patch": {
+                "security": [
+                    {
+                        "AuthToken": []
+                    }
+                ],
                 "description": "Update the comment corresponding to the input Comment id",
                 "consumes": [
                     "application/json"
@@ -170,6 +195,11 @@ const docTemplate = `{
         },
         "/medias": {
             "get": {
+                "security": [
+                    {
+                        "AuthToken": []
+                    }
+                ],
                 "description": "Get all medias from given user Id",
                 "consumes": [
                     "application/json"
@@ -191,6 +221,11 @@ const docTemplate = `{
                 }
             },
             "post": {
+                "security": [
+                    {
+                        "AuthToken": []
+                    }
+                ],
                 "description": "Create new media corresponding to the input data",
                 "consumes": [
                     "application/json"
@@ -225,6 +260,11 @@ const docTemplate = `{
         },
         "/medias/{mediaId}": {
             "get": {
+                "security": [
+                    {
+                        "AuthToken": []
+                    }
+                ],
                 "description": "Get media corresponding to the input Media id",
                 "consumes": [
                     "application/json"
@@ -255,6 +295,11 @@ const docTemplate = `{
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "AuthToken": []
+                    }
+                ],
                 "description": "Delete the media corresponding to the input Media id",
                 "consumes": [
                     "application/json"
@@ -282,6 +327,11 @@ const docTemplate = `{
                 }
             },
             "patch": {
+                "security": [
+                    {
+                        "AuthToken": []
+                    }
+                ],
                 "description": "Update the media corresponding to the input Media id",
                 "consumes": [
                     "application/json"
@@ -314,6 +364,11 @@ const docTemplate = `{
         },
         "/photos": {
             "get": {
+                "security": [
+                    {
+                        "AuthToken": []
+                    }
+                ],
                 "description": "Get all photos from given user Id",
                 "consumes": [
                     "application/json"
@@ -335,6 +390,11 @@ const docTemplate = `{
                 }
             },
             "post": {
+                "security": [
+                    {
+                        "AuthToken": []
+                    }
+                ],
                 "description": "Create new photo corresponding to the input data",
                 "consumes": [
                     "application/json"
@@ -369,6 +429,11 @@ const docTemplate = `{
         },
         "/photos/{photoId}": {
             "get": {
+                "security": [
+                    {
+                        "AuthToken": []
+                    }
+                ],
                 "description": "Get photo corresponding to the input Photo id",
                 "consumes": [
                     "application/json"
@@ -399,6 +464,11 @@ const docTemplate = `{
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "AuthToken": []
+                    }
+                ],
                 "description": "Delete the photo corresponding to the input Photo id",
                 "consumes": [
                     "application/json"
@@ -426,6 +496,11 @@ const docTemplate = `{
                 }
             },
             "patch": {
+                "security": [
+                    {
+                        "AuthToken": []
+                    }
+                ],
                 "description": "Update the photo corresponding to the input Photo id",
                 "consumes": [
                     "application/json"

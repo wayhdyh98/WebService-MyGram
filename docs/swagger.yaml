@@ -117,6 +117,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.Comment'
+      security:
+      - AuthToken: []
       summary: Get all comments
       tags:
       - comment
@@ -138,6 +140,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.Comment'
+      security:
+      - AuthToken: []
       summary: Create comment from given data
       tags:
       - comment
@@ -157,6 +161,8 @@ paths:
       responses:
         "204":
           description: No Content
+      security:
+      - AuthToken: []
       summary: Delete comment identified by the given Comment id
       tags:
       - comment
@@ -177,6 +183,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.Comment'
+      security:
+      - AuthToken: []
       summary: Get comment for a given Comment id
       tags:
       - comment
@@ -197,6 +205,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.Comment'
+      security:
+      - AuthToken: []
       summary: Update comment identified by the given Comment id
       tags:
       - comment
@@ -212,6 +222,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.Socialmedia'
+      security:
+      - AuthToken: []
       summary: Get all medias
       tags:
       - media
@@ -233,6 +245,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.Socialmedia'
+      security:
+      - AuthToken: []
       summary: Create media from given data
       tags:
       - media
@@ -252,6 +266,8 @@ paths:
       responses:
         "204":
           description: No Content
+      security:
+      - AuthToken: []
       summary: Delete media identified by the given Media id
       tags:
       - media
@@ -272,6 +288,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.Socialmedia'
+      security:
+      - AuthToken: []
       summary: Get media for a given Media id
       tags:
       - media
@@ -292,6 +310,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.Socialmedia'
+      security:
+      - AuthToken: []
       summary: Update media identified by the given Media id
       tags:
       - media
@@ -307,6 +327,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.Photo'
+      security:
+      - AuthToken: []
       summary: Get all photos
       tags:
       - photo
@@ -328,6 +350,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.Photo'
+      security:
+      - AuthToken: []
       summary: Create photo from given data
       tags:
       - photo
@@ -347,6 +371,8 @@ paths:
       responses:
         "204":
           description: No Content
+      security:
+      - AuthToken: []
       summary: Delete photo identified by the given Photo id
       tags:
       - photo
@@ -367,6 +393,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.Photo'
+      security:
+      - AuthToken: []
       summary: Get photo for a given Photo id
       tags:
       - photo
@@ -387,6 +415,8 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.Photo'
+      security:
+      - AuthToken: []
       summary: Update photo identified by the given Photo id
       tags:
       - photo

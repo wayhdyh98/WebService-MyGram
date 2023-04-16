@@ -17,6 +17,7 @@ import (
 // @Tags media
 // @Accept json
 // @Produce json
+// @Security AuthToken
 // @Success 200 {object} models.Socialmedia
 // @Router /medias [get]
 func GetAllMedia(c *gin.Context) {
@@ -43,6 +44,7 @@ func GetAllMedia(c *gin.Context) {
 // @Tags media
 // @Accept json
 // @Produce json
+// @Security AuthToken
 // @Param mediaId path int true "ID of the media"
 // @Success 200 {object} models.Socialmedia
 // @Router /medias/{mediaId} [get]
@@ -80,6 +82,7 @@ func GetMediaById(c *gin.Context) {
 // @Tags media
 // @Accept json
 // @Produce json
+// @Security AuthToken
 // @Param models.Socialmedia body models.Socialmedia true "create media"
 // @Success 200 {object} models.Socialmedia
 // @Router /medias [post]
@@ -122,6 +125,7 @@ func CreateMedia(c *gin.Context) {
 // @Tags media
 // @Accept json
 // @Produce json
+// @Security AuthToken
 // @Param mediaId path int true "ID of the media to be updated"
 // @Success 200 {object} models.Socialmedia
 // @Router /medias/{mediaId} [patch]
@@ -161,6 +165,7 @@ func UpdateMedia(c *gin.Context) {
 // @Tags media
 // @Accept json
 // @Produce json
+// @Security AuthToken
 // @Param mediaId path int true "ID of the media to be deleted"
 // @Success 204 "No Content"
 // @Router /medias/{mediaId} [delete]

@@ -17,6 +17,7 @@ import (
 // @Tags comment
 // @Accept json
 // @Produce json
+// @Security AuthToken
 // @Success 200 {object} models.Comment
 // @Router /comments [get]
 func GetAllComment(c *gin.Context) {
@@ -43,6 +44,7 @@ func GetAllComment(c *gin.Context) {
 // @Tags comment
 // @Accept json
 // @Produce json
+// @Security AuthToken
 // @Param commentId path int true "ID of the comment"
 // @Success 200 {object} models.Comment
 // @Router /comments/{commentId} [get]
@@ -80,6 +82,7 @@ func GetCommentById(c *gin.Context) {
 // @Tags comment
 // @Accept json
 // @Produce json
+// @Security AuthToken
 // @Param models.Comment body models.Comment true "create comment"
 // @Success 200 {object} models.Comment
 // @Router /comments [post]
@@ -138,6 +141,7 @@ func CreateComment(c *gin.Context) {
 // @Tags comment
 // @Accept json
 // @Produce json
+// @Security AuthToken
 // @Param commentId path int true "ID of the comment to be updated"
 // @Success 200 {object} models.Comment
 // @Router /comments/{commentId} [patch]
@@ -177,6 +181,7 @@ func UpdateComment(c *gin.Context) {
 // @Tags comment
 // @Accept json
 // @Produce json
+// @Security AuthToken
 // @Param commentId path int true "ID of the comment to be deleted"
 // @Success 204 "No Content"
 // @Router /comments/{commentId} [delete]
