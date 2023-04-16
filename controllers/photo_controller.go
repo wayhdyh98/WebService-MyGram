@@ -20,6 +20,7 @@ import (
 // @Success 200 {object} models.Photo
 // @Router /photos [get]
 // @Security Bearer
+// @Param Authorization header string true "Insert your access token" default(Bearer <Add access token here>)
 func GetAllPhoto(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -48,6 +49,7 @@ func GetAllPhoto(c *gin.Context) {
 // @Success 200 {object} models.Photo
 // @Router /photos/{photoId} [get]
 // @Security Bearer
+// @Param Authorization header string true "Insert your access token" default(Bearer <Add access token here>)
 func GetPhotoById(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -92,6 +94,7 @@ func GetPhotoById(c *gin.Context) {
 // @Success 200 {object} models.Photo
 // @Router /photos [post]
 // @Security Bearer
+// @Param Authorization header string true "Insert your access token" default(Bearer <Add access token here>)
 func CreatePhoto(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -135,6 +138,7 @@ func CreatePhoto(c *gin.Context) {
 // @Success 200 {object} models.Photo
 // @Router /photos/{photoId} [patch]
 // @Security Bearer
+// @Param Authorization header string true "Insert your access token" default(Bearer <Add access token here>)
 func UpdatePhoto(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -175,6 +179,7 @@ func UpdatePhoto(c *gin.Context) {
 // @Success 204 "No Content"
 // @Router /photos/{photoId} [delete]
 // @Security Bearer
+// @Param Authorization header string true "Insert your access token" default(Bearer <Add access token here>)
 func DeletePhoto(c *gin.Context) {
 	db := database.GetDB()
 	Photo := models.Photo{}

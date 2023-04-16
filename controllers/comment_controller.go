@@ -20,6 +20,7 @@ import (
 // @Success 200 {object} models.Comment
 // @Router /comments [get]
 // @Security Bearer
+// @Param Authorization header string true "Insert your access token" default(Bearer <Add access token here>)
 func GetAllComment(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -48,6 +49,7 @@ func GetAllComment(c *gin.Context) {
 // @Success 200 {object} models.Comment
 // @Router /comments/{commentId} [get]
 // @Security Bearer
+// @Param Authorization header string true "Insert your access token" default(Bearer <Add access token here>)
 func GetCommentById(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -86,6 +88,7 @@ func GetCommentById(c *gin.Context) {
 // @Success 200 {object} models.Comment
 // @Router /comments [post]
 // @Security Bearer
+// @Param Authorization header string true "Insert your access token" default(Bearer <Add access token here>)
 func CreateComment(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -145,6 +148,7 @@ func CreateComment(c *gin.Context) {
 // @Success 200 {object} models.Comment
 // @Router /comments/{commentId} [patch]
 // @Security Bearer
+// @Param Authorization header string true "Insert your access token" default(Bearer <Add access token here>)
 func UpdateComment(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -185,6 +189,7 @@ func UpdateComment(c *gin.Context) {
 // @Success 204 "No Content"
 // @Router /comments/{commentId} [delete]
 // @Security Bearer
+// @Param Authorization header string true "Insert your access token" default(Bearer <Add access token here>)
 func DeleteComment(c *gin.Context) {
 	db := database.GetDB()
 	Comment := models.Comment{}

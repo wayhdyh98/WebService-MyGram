@@ -20,6 +20,7 @@ import (
 // @Success 200 {object} models.Socialmedia
 // @Router /medias [get]
 // @Security Bearer
+// @Param Authorization header string true "Insert your access token" default(Bearer <Add access token here>)
 func GetAllMedia(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -48,6 +49,7 @@ func GetAllMedia(c *gin.Context) {
 // @Success 200 {object} models.Socialmedia
 // @Router /medias/{mediaId} [get]
 // @Security Bearer
+// @Param Authorization header string true "Insert your access token" default(Bearer <Add access token here>)
 func GetMediaById(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -86,6 +88,7 @@ func GetMediaById(c *gin.Context) {
 // @Success 200 {object} models.Socialmedia
 // @Router /medias [post]
 // @Security Bearer
+// @Param Authorization header string true "Insert your access token" default(Bearer <Add access token here>)
 func CreateMedia(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -129,6 +132,7 @@ func CreateMedia(c *gin.Context) {
 // @Success 200 {object} models.Socialmedia
 // @Router /medias/{mediaId} [patch]
 // @Security Bearer
+// @Param Authorization header string true "Insert your access token" default(Bearer <Add access token here>)
 func UpdateMedia(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -169,6 +173,7 @@ func UpdateMedia(c *gin.Context) {
 // @Success 204 "No Content"
 // @Router /medias/{mediaId} [delete]
 // @Security Bearer
+// @Param Authorization header string true "Insert your access token" default(Bearer <Add access token here>)
 func DeleteMedia(c *gin.Context) {
 	db := database.GetDB()
 	Media := models.Socialmedia{}

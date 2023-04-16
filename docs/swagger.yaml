@@ -110,6 +110,13 @@ paths:
       consumes:
       - application/json
       description: Get all comments from given user Id
+      parameters:
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
       produces:
       - application/json
       responses:
@@ -133,6 +140,12 @@ paths:
         required: true
         schema:
           $ref: '#/definitions/models.Comment'
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
       produces:
       - application/json
       responses:
@@ -156,6 +169,12 @@ paths:
         name: commentId
         required: true
         type: integer
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
       produces:
       - application/json
       responses:
@@ -176,6 +195,12 @@ paths:
         name: commentId
         required: true
         type: integer
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
       produces:
       - application/json
       responses:
@@ -198,6 +223,12 @@ paths:
         name: commentId
         required: true
         type: integer
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
       produces:
       - application/json
       responses:
@@ -215,6 +246,13 @@ paths:
       consumes:
       - application/json
       description: Get all medias from given user Id
+      parameters:
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
       produces:
       - application/json
       responses:
@@ -238,6 +276,12 @@ paths:
         required: true
         schema:
           $ref: '#/definitions/models.Socialmedia'
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
       produces:
       - application/json
       responses:
@@ -261,6 +305,12 @@ paths:
         name: mediaId
         required: true
         type: integer
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
       produces:
       - application/json
       responses:
@@ -281,6 +331,12 @@ paths:
         name: mediaId
         required: true
         type: integer
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
       produces:
       - application/json
       responses:
@@ -303,6 +359,12 @@ paths:
         name: mediaId
         required: true
         type: integer
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
       produces:
       - application/json
       responses:
@@ -320,6 +382,13 @@ paths:
       consumes:
       - application/json
       description: Get all photos from given user Id
+      parameters:
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
       produces:
       - application/json
       responses:
@@ -343,6 +412,12 @@ paths:
         required: true
         schema:
           $ref: '#/definitions/models.Photo'
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
       produces:
       - application/json
       responses:
@@ -366,6 +441,12 @@ paths:
         name: photoId
         required: true
         type: integer
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
       produces:
       - application/json
       responses:
@@ -386,6 +467,12 @@ paths:
         name: photoId
         required: true
         type: integer
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
       produces:
       - application/json
       responses:
@@ -408,6 +495,12 @@ paths:
         name: photoId
         required: true
         type: integer
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
       produces:
       - application/json
       responses:
