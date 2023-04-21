@@ -145,6 +145,7 @@ func CreateComment(c *gin.Context) {
 // @Accept json
 // @Produce json
 // @Param commentId path int true "ID of the comment to be updated"
+// @Param models.Comment body models.Comment true "update comment"
 // @Success 200 {object} models.Comment
 // @Router /comments/{commentId} [patch]
 // @Security Bearer

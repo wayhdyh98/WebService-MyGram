@@ -217,6 +217,15 @@ const docTemplate = `{
                         "required": true
                     },
                     {
+                        "description": "update comment",
+                        "name": "models.Comment",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Comment"
+                        }
+                    },
+                    {
                         "type": "string",
                         "default": "Bearer \u003cAdd access token here\u003e",
                         "description": "Insert your access token",

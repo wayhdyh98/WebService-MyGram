@@ -223,6 +223,12 @@ paths:
         name: commentId
         required: true
         type: integer
+      - description: update comment
+        in: body
+        name: models.Comment
+        required: true
+        schema:
+          $ref: '#/definitions/models.Comment'
       - default: Bearer <Add access token here>
         description: Insert your access token
         in: header
