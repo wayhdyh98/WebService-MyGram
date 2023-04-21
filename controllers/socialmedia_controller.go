@@ -129,8 +129,9 @@ func CreateMedia(c *gin.Context) {
 // @Accept json
 // @Produce json
 // @Param mediaId path int true "ID of the media to be updated"
+// @Param models.Socialmedia body models.Socialmedia true "update social media"
 // @Success 200 {object} models.Socialmedia
-// @Router /medias/{mediaId} [patch]
+// @Router /medias/{mediaId} [put]
 // @Security Bearer
 // @Param Authorization header string true "Insert your access token" default(Bearer <Add access token here>)
 func UpdateMedia(c *gin.Context) {

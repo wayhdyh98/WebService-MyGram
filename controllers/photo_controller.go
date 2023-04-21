@@ -135,8 +135,9 @@ func CreatePhoto(c *gin.Context) {
 // @Accept json
 // @Produce json
 // @Param photoId path int true "ID of the photo to be updated"
+// @Param models.Photo body models.Photo true "update photo"
 // @Success 200 {object} models.Photo
-// @Router /photos/{photoId} [patch]
+// @Router /photos/{photoId} [put]
 // @Security Bearer
 // @Param Authorization header string true "Insert your access token" default(Bearer <Add access token here>)
 func UpdatePhoto(c *gin.Context) {
