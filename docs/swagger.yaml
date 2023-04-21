@@ -213,7 +213,7 @@ paths:
       summary: Get comment for a given Comment id
       tags:
       - comment
-    patch:
+    put:
       consumes:
       - application/json
       description: Update the comment corresponding to the input Comment id

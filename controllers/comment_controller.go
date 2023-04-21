@@ -147,7 +147,7 @@ func CreateComment(c *gin.Context) {
 // @Param commentId path int true "ID of the comment to be updated"
 // @Param models.Comment body models.Comment true "update comment"
 // @Success 200 {object} models.Comment
-// @Router /comments/{commentId} [patch]
+// @Router /comments/{commentId} [put]
 // @Security Bearer
 // @Param Authorization header string true "Insert your access token" default(Bearer <Add access token here>)
 func UpdateComment(c *gin.Context) {
